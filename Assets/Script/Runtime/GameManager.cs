@@ -50,7 +50,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         //RestartTurn();
-        StartCoroutine(StartGameCoroutine()); 
+        StartCoroutine(StartGameCoroutine());
+        AdsManager.instance.ShowAd();
     }
 
     // Update is called once per frame
@@ -126,6 +127,7 @@ public class GameManager : MonoBehaviour
     IEnumerator ShowRestartButtonCoroutine()
     {
         yield return new WaitForSeconds(2);
+        AdsManager.instance.interstitialAdController.ShowAd();
         _restartButton.SetActive(true);
     }
     public void Restart()

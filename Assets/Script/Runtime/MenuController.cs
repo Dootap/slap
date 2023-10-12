@@ -20,5 +20,6 @@ public class MenuController : MonoBehaviour
     public void StartGame()
     {
         SceneLoader.Instance.Load(SceneConst.Scene.Game);
+        AdsManager.instance.interstitialAdController.ShowAd();
     }
 }
